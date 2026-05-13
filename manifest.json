@@ -1,0 +1,303 @@
+{
+  "name": "School Staff SACCO Union",
+  "short_name": "School SACCO",
+  "description": "An editable School Staff Savings and Credit Cooperative Union Progressive Web App (PWA) for schools with Admin, Treasurer and Member dashboards, loans, savings, shares, and financial management in UGX.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#0b5ed7",
+  "lang": "en-UG",
+  "dir": "ltr",
+  "categories": [
+    "finance",
+    "education",
+    "productivity",
+    "business"
+  ],
+  "id": "school-staff-sacco-union-pwa",
+  "prefer_related_applications": false,
+
+  "icons": [
+    {
+      "src": "./icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+
+  "screenshots": [
+    {
+      "src": "./screenshots/login-dashboard.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "School SACCO Login Dashboard"
+    },
+    {
+      "src": "./screenshots/admin-dashboard.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Admin Dashboard"
+    },
+    {
+      "src": "./screenshots/member-dashboard.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Member Dashboard"
+    }
+  ],
+
+  "shortcuts": [
+    {
+      "name": "Admin Dashboard",
+      "short_name": "Admin",
+      "description": "Manage members, loans and SACCO settings",
+      "url": "./admin.html",
+      "icons": [
+        {
+          "src": "./icons/admin-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Treasurer Dashboard",
+      "short_name": "Treasurer",
+      "description": "Manage deposits and loan disbursements",
+      "url": "./treasurer.html",
+      "icons": [
+        {
+          "src": "./icons/treasurer-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Member Dashboard",
+      "short_name": "Member",
+      "description": "Monitor savings, shares and loans",
+      "url": "./member.html",
+      "icons": [
+        {
+          "src": "./icons/member-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+
+  "protocol_handlers": [
+    {
+      "protocol": "web+sacco",
+      "url": "./index.html?school=%s"
+    }
+  ],
+
+  "launch_handler": {
+    "client_mode": [
+      "focus-existing",
+      "auto"
+    ]
+  },
+
+  "edge_side_panel": {
+    "preferred_width": 480
+  },
+
+  "handle_links": "preferred",
+
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui",
+    "browser"
+  ],
+
+  "file_handlers": [
+    {
+      "action": "./import.html",
+      "accept": {
+        "application/json": [".json"],
+        "text/csv": [".csv"],
+        "application/vnd.ms-excel": [".xls", ".xlsx"]
+      }
+    }
+  ],
+
+  "permissions": [
+    "storage",
+    "notifications"
+  ],
+
+  "features": {
+    "authentication": {
+      "enabled": true,
+      "methods": [
+        "school_id",
+        "username",
+        "email",
+        "password"
+      ],
+      "temporary_storage": "GitHub Pages Local Storage",
+      "future_storage": "Professional Cloud Database",
+      "demo_accounts": [
+        {
+          "school_id": "School",
+          "username": "Admin123",
+          "password": "123",
+          "role": "Admin"
+        },
+        {
+          "school_id": "School",
+          "username": "Treasurer123",
+          "password": "123",
+          "role": "Treasurer"
+        },
+        {
+          "school_id": "School",
+          "username": "Member123",
+          "password": "123",
+          "role": "Member"
+        }
+      ]
+    },
+
+    "registration_fields": [
+      "School",
+      "School ID",
+      "Name",
+      "Username",
+      "Email",
+      "Password"
+    ],
+
+    "roles": {
+      "Admin": {
+        "permissions": [
+          "Add Members",
+          "Remove Members",
+          "Approve Loans",
+          "Edit SACCO Settings",
+          "Edit Loan Terms",
+          "Edit Savings Settings",
+          "Edit Share Percentages",
+          "View Reports",
+          "Manage Roles"
+        ]
+      },
+
+      "Treasurer": {
+        "permissions": [
+          "Record Deposits",
+          "Record Withdrawals",
+          "Disburse Approved Loans",
+          "Manage Transactions",
+          "Generate Financial Reports",
+          "Track Savings"
+        ]
+      },
+
+      "Member": {
+        "permissions": [
+          "View Savings Account",
+          "Request Loans",
+          "Monitor Loan Status",
+          "View Shares",
+          "View Share Indices",
+          "Track Deposits"
+        ]
+      }
+    },
+
+    "financial_settings": {
+      "currency": "UGX",
+      "minimum_deposit_editable": true,
+      "loan_interest_editable": true,
+      "loan_terms_editable": true,
+      "share_percentage_editable": true,
+      "late_payment_penalty_editable": true,
+      "maximum_loan_multiplier_editable": true
+    },
+
+    "member_options": {
+      "admins_can_save": true,
+      "treasurers_can_save": true,
+      "multiple_roles_supported": true
+    }
+  },
+
+  "offline_capabilities": {
+    "enabled": true,
+    "cache_pages": [
+      "./index.html",
+      "./admin.html",
+      "./treasurer.html",
+      "./member.html",
+      "./register.html",
+      "./login.html"
+    ],
+    "cache_assets": [
+      "./css/style.css",
+      "./js/app.js",
+      "./js/auth.js",
+      "./js/dashboard.js",
+      "./js/storage.js"
+    ]
+  },
+
+  "developer": {
+    "name": "School Staff SACCO Union Platform",
+    "website": "https://github.com/",
+    "support_email": "support@schoolsacco.app"
+  }
+}
